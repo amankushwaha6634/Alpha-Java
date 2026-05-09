@@ -88,3 +88,131 @@ public class Generic {
  * | Example            | List<String>                     | Becomes List                     |
  * | Benefit            | Prevents ClassCastException      | Works with old Java code         |
  */
+
+
+
+/**
+In this line:
+
+    List<String> names = new ArrayList<>();
+
+<String> is called a generic type parameter
+(or simply “generic”).
+
+It tells Java:
+
+    “This List will store only String objects.”
+
+So:
+
+    List<String>  → List of Strings
+    List<Integer> → List of Integers
+    List<Double>  → List of Doubles
+
+
+🔹 Breakdown
+------------
+
+    List<String> names
+
+    Part              Meaning
+    -----------------------------------------
+    List              Generic interface
+    <String>          Generic type argument
+    names             Variable name
+
+
+🔹 Why Generics Exist
+----------------------
+
+Without generics (old Java):
+
+    List list = new ArrayList();
+
+    list.add("Aman");
+    list.add(123); // Allowed 😢
+
+Problem:
+
+    String s = (String) list.get(1); // Runtime error 💥
+
+
+With generics:
+
+    List<String> list = new ArrayList<>();
+
+    list.add("Aman");
+    list.add(123); // ❌ Compile-time error
+
+Now Java protects us before running the program ✅
+
+
+🔹 Important Concept
+---------------------
+
+List itself is a generic class/interface.
+
+    List<T>
+
+Here:
+
+    T
+
+means:
+
+    “Some type will be provided later.”
+
+When you write:
+
+    List<String>
+
+you replace T with String.
+
+
+🔹 Real Internal Idea
+----------------------
+
+Java collections are designed like this:
+
+    class Box<T> {
+        T value;
+    }
+
+Usage:
+
+    Box<String> b1 = new Box<>();
+    Box<Integer> b2 = new Box<>();
+
+Here:
+
+    T becomes String
+    T becomes Integer
+
+That is Generics 🔥
+
+
+🔹 Relation with Type Erasure
+------------------------------
+
+At compile-time:
+
+    List<String>
+    List<Integer>
+
+After compilation (runtime):
+
+    List
+    List
+
+because Java removes generic type info using Type Erasure.
+
+That’s why:
+
+    list1.getClass() == list2.getClass()
+
+returns:
+
+    true
+
+✅ Same runtime class.
+*/
