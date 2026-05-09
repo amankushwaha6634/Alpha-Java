@@ -140,14 +140,11 @@ public class _1_JavaMemoryManagementDeepDive {
 │      work()                                    │
 │                                                 │
 └─────────────────────────────────────────────────┘
+    IMPORTANT:
+    -----------
+    ❌ No object exists yet
 
-
-
-IMPORTANT:
------------
-❌ No object exists yet
-
-Only blueprint/class information exists.
+    Only blueprint/class information exists.
 */
 
 
@@ -159,9 +156,18 @@ Only blueprint/class information exists.
 
             Employee e1 = new Employee();
 
-        creates:
-            ✅ Reference variable in STACK
-            ✅ Object in HEAP
+        This line: does MANY things internally.
+        /*
+        🔹 PART 1
+        -----------
+        Employee e1
+        creates reference variable.
+        Stored in STACK MEMORY.
+
+        🔹 PART 2
+        -----------
+        new Employee()
+        creates REAL object in HEAP MEMORY.
         */
 
         Employee e1 = new Employee();
@@ -170,22 +176,23 @@ Only blueprint/class information exists.
         /*
         🧠 MEMORY AFTER OBJECT CREATION
         ================================
-
-
                 JVM MEMORY
 ═══════════════════════════════════════════════════
-
-
-
 ┌─────────────────────────────────────────────────┐
 │                 METHOD AREA                    │
 ├─────────────────────────────────────────────────┤
 │                                                 │
 │   Employee.class                               │
 │                                                 │
-│   company = "OpenAI"                           │
+│   Instance Variable Structure:                 │
+│      String name                               │
+│      int age                                   │
 │                                                 │
-│   work()                                       │
+│   Static Variables:                            │
+│      company = "OpenAI"                        │
+│                                                 │
+│   Methods:                                     │
+│      work()                                    │
 │                                                 │
 └─────────────────────────────────────────────────┘
 
@@ -314,6 +321,10 @@ IMPORTANT:
 │                                                 │
 │   Employee.class                               │
 │                                                 │
+│   Instance Variable Structure:                 │
+│      String name                               │
+│      int age                                   │
+│                                                 │
 │   Static Variables:                            │
 │      company = "OpenAI"                        │
 │                                                 │
@@ -321,7 +332,6 @@ IMPORTANT:
 │      work()                                    │
 │                                                 │
 └─────────────────────────────────────────────────┘
-
 
 
 
@@ -406,7 +416,7 @@ Rahul is working
 METHOD AREA
 -------------
 ✅ Class metadata
-✅ Static variables
+✅ Static variables with values
 ✅ Method definitions
 
 
@@ -428,9 +438,7 @@ STACK MEMORY
 ================================
 
 e1 and e2 are NOT actual objects.
-
 They only store ADDRESS of objects.
-
 Actual objects live in HEAP MEMORY.
 
 
@@ -439,7 +447,6 @@ Actual objects live in HEAP MEMORY.
 =========================
 
 Because static variables live in METHOD AREA.
-
 Only ONE copy exists.
 
 
@@ -451,64 +458,3 @@ Because every object gets separate
 memory inside HEAP.
 */
 
-
-
-/*
-💬 OUTPUT
-===========
-
-Aman is working
-Rahul is working
-
-
-
-🔥 GOLDEN RULE
-================
-
-METHOD AREA
--------------
-✅ Class metadata
-✅ Static variables
-✅ Method definitions
-
-
-HEAP MEMORY
--------------
-✅ Actual objects
-✅ Instance variables
-
-
-STACK MEMORY
---------------
-✅ Reference variables
-✅ Local variables
-✅ Method calls
-
-
-
-🔥 MOST IMPORTANT UNDERSTANDING
-================================
-
-e1 and e2 are NOT actual objects.
-
-They only store ADDRESS of objects.
-
-Actual objects live in HEAP MEMORY.
-
-
-
-🔥 WHY STATIC IS SHARED?
-=========================
-
-Because static variables live in METHOD AREA.
-
-Only ONE copy exists.
-
-
-
-🔥 WHY INSTANCE VARIABLES DIFFER?
-==================================
-
-Because every object gets separate
-memory inside HEAP.
-*/
