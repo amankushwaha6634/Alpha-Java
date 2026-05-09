@@ -118,18 +118,16 @@ public class _1_JavaMemoryManagementDeepDive {
         JVM first loads Employee.class
         into METHOD AREA.
 
-
-        METHOD AREA
-        ────────────────────
-
-        Employee.class
-
-        name
-        age
-
-        company = "OpenAI"
-
-        work()
+        ┌──────────────────────────┐
+        │       METHOD AREA        │
+        ├──────────────────────────┤
+        │ Employee.class           │
+        │                          │
+        │ name                     │
+        │ age                      │
+        │ work()                   │
+        │ company = "OpenAI"       │
+        └──────────────────────────┘
 
 
         IMPORTANT:
@@ -159,10 +157,13 @@ public class _1_JavaMemoryManagementDeepDive {
         -----------
 
         Employee e1
-
         creates reference variable.
-
         Stored in STACK MEMORY.
+        ┌──────────────────────────┐
+        │       STACK MEMORY       │
+        ├──────────────────────────┤
+        │ e1                       │
+        └──────────────────────────┘
         */
 
 
