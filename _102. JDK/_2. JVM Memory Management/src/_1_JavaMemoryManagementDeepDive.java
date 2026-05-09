@@ -27,34 +27,28 @@ Main memory areas:
     ✅ Stack Memory
 
 
-Basic Idea:
-
-    Method Area -> Class level things
-    Heap Memory -> Actual objects
-    Stack Memory -> References & method calls
-
-
 
 🧠 JVM MEMORY OVERVIEW
 =======================
 
+
                 JVM MEMORY
-════════════════════════════════════
+═══════════════════════════════════════════════════
 
 
-┌──────────────────────┐
-│     METHOD AREA      │
-└──────────────────────┘
+        ┌────────────────────────────┐
+        │        METHOD AREA        │
+        └────────────────────────────┘
 
 
-┌──────────────────────┐
-│      HEAP MEMORY     │
-└──────────────────────┘
+        ┌────────────────────────────┐
+        │        HEAP MEMORY        │
+        └────────────────────────────┘
 
 
-┌──────────────────────┐
-│      STACK MEMORY    │
-└──────────────────────┘
+        ┌────────────────────────────┐
+        │        STACK MEMORY       │
+        └────────────────────────────┘
 
 
 
@@ -68,8 +62,7 @@ class Employee {
     /*
     🔹 INSTANCE VARIABLES
     ----------------------
-    Belong to object.
-    Stored inside HEAP object.
+    Stored inside object.
     */
 
     String name;
@@ -79,7 +72,6 @@ class Employee {
     /*
     🔹 STATIC VARIABLE
     -------------------
-    Belongs to class.
     Stored in METHOD AREA.
     */
 
@@ -89,7 +81,8 @@ class Employee {
     /*
     🔹 INSTANCE METHOD
     -------------------
-    Method definition stored in METHOD AREA.
+    Method definition stored
+    in METHOD AREA.
     */
 
     void work() {
@@ -117,25 +110,45 @@ public class _1_JavaMemoryManagementDeepDive {
 
         JVM first loads Employee.class
         into METHOD AREA.
-
-        ┌──────────────────────────┐
-        │       METHOD AREA        │
-        ├──────────────────────────┤
-        │ Employee.class           │
-        │                          │
-        │ name                     │
-        │ age                      │
-        │ work()                   │
-        │ company = "OpenAI"       │
-        └──────────────────────────┘
-
-
-        IMPORTANT:
-        -----------
-        ❌ No object created yet
-
-        Only blueprint/class info exists.
         */
+
+
+        /*
+        🧠 MEMORY AFTER CLASS LOADING
+        ==============================
+
+
+                JVM MEMORY
+═══════════════════════════════════════════════════
+
+
+
+┌─────────────────────────────────────────────────┐
+│                 METHOD AREA                    │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│   Employee.class                               │
+│                                                 │
+│   Instance Variable Structure:                 │
+│      String name                               │
+│      int age                                   │
+│                                                 │
+│   Static Variables:                            │
+│      company = "OpenAI"                        │
+│                                                 │
+│   Methods:                                     │
+│      work()                                    │
+│                                                 │
+└─────────────────────────────────────────────────┘
+
+
+
+IMPORTANT:
+-----------
+❌ No object exists yet
+
+Only blueprint/class information exists.
+*/
 
 
         /*
@@ -146,92 +159,77 @@ public class _1_JavaMemoryManagementDeepDive {
 
             Employee e1 = new Employee();
 
-        does MANY things internally.
+        creates:
+            ✅ Reference variable in STACK
+            ✅ Object in HEAP
         */
 
         Employee e1 = new Employee();
 
 
         /*
-        🔹 PART 1
-        -----------
-
-        Employee e1
-        creates reference variable.
-        Stored in STACK MEMORY.
-        ┌──────────────────────────┐
-        │       STACK MEMORY       │
-        ├──────────────────────────┤
-        │ e1                       │
-        └──────────────────────────┘
-        */
-
-
-        /*
-        🔹 PART 2
-        -----------
-
-        new Employee()
-
-        creates REAL object in HEAP MEMORY.
-        */
-
-
-        /*
-        🔹 PART 3
-        -----------
-
-        e1 stores ADDRESS of heap object.
-        */
-
-
-        /*
         🧠 MEMORY AFTER OBJECT CREATION
-        =================================
-
-                        JVM MEMORY
-        ════════════════════════════════════
+        ================================
 
 
-
-        METHOD AREA
-        ────────────────────
-
-        Employee.class
-
-        company = "OpenAI"
-
-        work()
+                JVM MEMORY
+═══════════════════════════════════════════════════
 
 
 
-
-        STACK MEMORY
-        ────────────────────
-
-        e1 ───────────────→ 101
+┌─────────────────────────────────────────────────┐
+│                 METHOD AREA                    │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│   Employee.class                               │
+│                                                 │
+│   company = "OpenAI"                           │
+│                                                 │
+│   work()                                       │
+│                                                 │
+└─────────────────────────────────────────────────┘
 
 
 
 
-        HEAP MEMORY
-        ────────────────────
+┌─────────────────────────────────────────────────┐
+│                 STACK MEMORY                   │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│                                                 │
+│      e1                                         │
+│      │                                          │
+│      │                                          │
+│      ▼                                          │
+│     101                                         │
+│                                                 │
+└─────────────────────────────────────────────────┘
 
-        Address : 101
-
-        Employee Object
-        ----------------
-        name = null
-        age  = 0
 
 
 
-        IMPORTANT:
-        -----------
-        ✅ e1 is NOT actual object
-        ✅ e1 stores ADDRESS of object
-        ✅ Actual object lives in HEAP
-        */
+┌─────────────────────────────────────────────────┐
+│                  HEAP MEMORY                   │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│   Address : 101                                │
+│   ------------------------------------          │
+│                                                 │
+│   Employee Object                              │
+│                                                 │
+│   name = null                                  │
+│   age  = 0                                     │
+│                                                 │
+└─────────────────────────────────────────────────┘
+
+
+
+IMPORTANT:
+-----------
+✅ e1 stores object address
+✅ Actual object lives in HEAP
+✅ Default values assigned automatically
+*/
 
 
         /*
@@ -239,7 +237,7 @@ public class _1_JavaMemoryManagementDeepDive {
         ==========================
 
         JVM uses e1 reference
-        to find heap object.
+        to locate heap object.
         */
 
         e1.name = "Aman";
@@ -250,24 +248,41 @@ public class _1_JavaMemoryManagementDeepDive {
         🧠 MEMORY AFTER ASSIGNING VALUES
         =================================
 
-        STACK MEMORY
-        ────────────────────
 
-        e1 ───────────────→ 101
-
+                JVM MEMORY
+═══════════════════════════════════════════════════
 
 
 
-        HEAP MEMORY
-        ────────────────────
+┌─────────────────────────────────────────────────┐
+│                 STACK MEMORY                   │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│      e1                                         │
+│      │                                          │
+│      │                                          │
+│      ▼                                          │
+│     101                                         │
+│                                                 │
+└─────────────────────────────────────────────────┘
 
-        Address : 101
 
-        Employee Object
-        ----------------
-        name = "Aman"
-        age  = 25
-        */
+
+
+┌─────────────────────────────────────────────────┐
+│                  HEAP MEMORY                   │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│   Address : 101                                │
+│   ------------------------------------          │
+│                                                 │
+│   Employee Object                              │
+│                                                 │
+│   name = "Aman"                                │
+│   age  = 25                                    │
+│                                                 │
+└─────────────────────────────────────────────────┘
+*/
 
 
         /*
@@ -287,77 +302,154 @@ public class _1_JavaMemoryManagementDeepDive {
         🧠 FINAL MEMORY STATE
         ======================
 
+
                         JVM MEMORY
-        ════════════════════════════════════
+═══════════════════════════════════════════════════
 
 
 
-        METHOD AREA
-        ────────────────────
-
-        Employee.class
-
-        company = "OpenAI"
-
-        work()
-
-
-
-
-        STACK MEMORY
-        ────────────────────
-
-        e1 ───────────────→ 101
-
-        e2 ───────────────→ 202
+┌─────────────────────────────────────────────────┐
+│                 METHOD AREA                    │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│   Employee.class                               │
+│                                                 │
+│   Static Variables:                            │
+│      company = "OpenAI"                        │
+│                                                 │
+│   Methods:                                     │
+│      work()                                    │
+│                                                 │
+└─────────────────────────────────────────────────┘
 
 
 
 
-        HEAP MEMORY
-        ────────────────────
-
-        Address : 101
-
-        Employee Object
-        ----------------
-        name = "Aman"
-        age  = 25
-
-
-
-        Address : 202
-
-        Employee Object
-        ----------------
-        name = "Rahul"
-        age  = 23
+┌─────────────────────────────────────────────────┐
+│                 STACK MEMORY                   │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│      e1                         e2              │
+│      │                          │               │
+│      │                          │               │
+│      ▼                          ▼               │
+│     101                        202              │
+│                                                 │
+└─────────────────────────────────────────────────┘
 
 
 
-        IMPORTANT:
-        -----------
-        ✅ Every object gets separate memory
-        ✅ Instance variables stored in HEAP
-        ✅ Static variables stored in METHOD AREA
-        ✅ Reference variables stored in STACK
-        */
+
+┌─────────────────────────────────────────────────┐
+│                  HEAP MEMORY                   │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│   Address : 101                                │
+│   ------------------------------------          │
+│                                                 │
+│   Employee Object                              │
+│                                                 │
+│   name = "Aman"                                │
+│   age  = 25                                    │
+│                                                 │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│   Address : 202                                │
+│   ------------------------------------          │
+│                                                 │
+│   Employee Object                              │
+│                                                 │
+│   name = "Rahul"                               │
+│   age  = 23                                    │
+│                                                 │
+└─────────────────────────────────────────────────┘
+
+
+
+IMPORTANT:
+-----------
+✅ Every object gets separate HEAP memory
+✅ e1 and e2 point to different objects
+✅ Static variable shared by all objects
+✅ Methods are NOT copied into objects
+*/
 
 
         /*
         🔹 METHOD CALL
         ----------------
-
         Method definition already exists
-        inside METHOD AREA.
+        in METHOD AREA.
 
-        Object simply uses that method.
+        Objects simply use that method.
         */
 
         e1.work();
         e2.work();
     }
 }
+
+
+
+/*
+💬 OUTPUT
+===========
+
+Aman is working
+Rahul is working
+
+
+
+🔥 GOLDEN RULE
+================
+
+METHOD AREA
+-------------
+✅ Class metadata
+✅ Static variables
+✅ Method definitions
+
+
+HEAP MEMORY
+-------------
+✅ Actual objects
+✅ Instance variables
+
+
+STACK MEMORY
+--------------
+✅ Reference variables
+✅ Local variables
+✅ Method calls
+
+
+
+🔥 MOST IMPORTANT UNDERSTANDING
+================================
+
+e1 and e2 are NOT actual objects.
+
+They only store ADDRESS of objects.
+
+Actual objects live in HEAP MEMORY.
+
+
+
+🔥 WHY STATIC IS SHARED?
+=========================
+
+Because static variables live in METHOD AREA.
+
+Only ONE copy exists.
+
+
+
+🔥 WHY INSTANCE VARIABLES DIFFER?
+==================================
+
+Because every object gets separate
+memory inside HEAP.
+*/
 
 
 
