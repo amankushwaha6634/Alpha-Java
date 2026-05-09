@@ -261,8 +261,6 @@ public class _1_Object_VS_Class {
     }
 }
 
-
-
 /*
 💬 OUTPUT
 ===========
@@ -271,10 +269,8 @@ Red car is driving at speed 120
 Blue car is driving at speed 180
 
 
-
 🔥 CLASS vs OBJECT
 ===================
-
 CLASS
 ------
 
@@ -282,8 +278,6 @@ CLASS
 ✅ Logical entity
 ✅ Defines structure
 ✅ No actual memory for object data
-
-
 
 OBJECT
 -------
