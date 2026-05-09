@@ -1,14 +1,55 @@
 /*
-📘 TOPIC: Where Do Static Methods Go In Memory?
-================================================
+📘 TOPIC: Java Memory Management Deep Dive
+===========================================
 
 🧠 WHAT YOU’LL LEARN
 ---------------------
-1️⃣ Where static methods are stored
-2️⃣ Why static methods belong to class
-3️⃣ Difference between static and instance methods
-4️⃣ Why static methods do not need object
-5️⃣ JVM memory visualization
+1️⃣ What happens internally in JVM
+2️⃣ What is Method Area
+3️⃣ What is Heap Memory
+4️⃣ What is Stack Memory
+5️⃣ How objects are created
+6️⃣ How references work
+7️⃣ Difference between structure vs actual data
+8️⃣ Where static variables & methods are stored
+
+
+
+🔹 JVM MEMORY STRUCTURE
+------------------------
+
+JVM divides memory into different areas.
+
+Main memory areas:
+
+    ✅ Method Area
+    ✅ Heap Memory
+    ✅ Stack Memory
+
+
+
+🧠 JVM MEMORY OVERVIEW
+=======================
+
+
+                JVM MEMORY
+═══════════════════════════════════════════════════
+
+
+        ┌────────────────────────────┐
+        │        METHOD AREA        │
+        └────────────────────────────┘
+
+
+        ┌────────────────────────────┐
+        │        HEAP MEMORY        │
+        └────────────────────────────┘
+
+
+        ┌────────────────────────────┐
+        │        STACK MEMORY       │
+        └────────────────────────────┘
+
 
 
 
@@ -16,12 +57,31 @@
 -----------------
 */
 
-class Employeee {
+class Employe {
+
+    /*
+    🔹 INSTANCE VARIABLES
+    ----------------------
+
+    IMPORTANT:
+    These lines DO NOT create actual values.
+
+    They only define OBJECT STRUCTURE.
+
+    Actual values are created only
+    after object creation.
+    */
+
+    String name;
+    int age;
+
 
     /*
     🔹 STATIC VARIABLE
     -------------------
+
     Belongs to class.
+
     Stored in METHOD AREA.
     */
 
@@ -31,6 +91,7 @@ class Employeee {
     /*
     🔹 STATIC METHOD
     -----------------
+
     Belongs to class.
 
     Stored in METHOD AREA.
@@ -43,23 +104,13 @@ class Employeee {
 
 
     /*
-    🔹 INSTANCE VARIABLE
-    ---------------------
-    Belongs to object.
-
-    Stored inside HEAP object.
-    */
-
-    String name;
-
-
-    /*
     🔹 INSTANCE METHOD
     -------------------
-    Method definition also stored
+
+    Method definition stored
     in METHOD AREA.
 
-    But requires object to execute.
+    Method execution happens in STACK.
     */
 
     void work() {
@@ -106,13 +157,21 @@ public class _2_WhereStaticMethodsGo {
 │                                                 │
 │   Employee.class                               │
 │                                                 │
+│   Object Structure / Blueprint:                │
+│                                                 │
+│      String name                               │
+│      int age                                   │
+│                                                 │
 │   Static Variables:                            │
+│                                                 │
 │      company = "OpenAI"                        │
 │                                                 │
 │   Static Methods:                              │
+│                                                 │
 │      showCompany()                             │
 │                                                 │
 │   Instance Methods:                            │
+│                                                 │
 │      work()                                    │
 │                                                 │
 └─────────────────────────────────────────────────┘
@@ -121,42 +180,31 @@ public class _2_WhereStaticMethodsGo {
 
 IMPORTANT:
 -----------
-✅ Static methods stored in METHOD AREA
-✅ Static variables stored in METHOD AREA
-✅ Only ONE copy exists
-✅ No object created yet
+✅ Only blueprint/structure exists
+✅ No actual object exists yet
+✅ name & age values NOT created yet
 */
 
 
         /*
-        🚀 STEP 2 : CALL STATIC METHOD
-        ===============================
+        🚀 STEP 2 : OBJECT CREATION
+        ============================
 
-        Static methods belong to CLASS.
+        This line:
 
-        So object is NOT required.
+            Employee e1 = new Employee();
+
+        creates:
+            ✅ Reference variable in STACK
+            ✅ Actual object in HEAP
         */
 
-        Employeee.showCompany();
-
-
-        /*
-        🚀 STEP 3 : CREATE OBJECT
-        ==========================
-
-        Object required for instance members.
-        */
-
-        Employeee e1 = new Employeee();
-
-        e1.name = "Aman";
-
-        e1.work();
+        Employe e1 = new Employe();
 
 
         /*
         🧠 MEMORY AFTER OBJECT CREATION
-        =================================
+        ================================
 
 
                     JVM MEMORY
@@ -170,14 +218,14 @@ IMPORTANT:
 │                                                 │
 │   Employee.class                               │
 │                                                 │
-│   Static Variables:                            │
-│      company = "OpenAI"                        │
+│   Blueprint:                                   │
+│      String name                               │
+│      int age                                   │
 │                                                 │
-│   Static Methods:                              │
-│      showCompany()                             │
+│   company = "OpenAI"                           │
 │                                                 │
-│   Instance Methods:                            │
-│      work()                                    │
+│   showCompany()                                │
+│   work()                                       │
 │                                                 │
 └─────────────────────────────────────────────────┘
 
@@ -208,7 +256,8 @@ IMPORTANT:
 │                                                 │
 │   Employee Object                              │
 │                                                 │
-│   name = "Aman"                                │
+│   name = null                                  │
+│   age  = 0                                     │
 │                                                 │
 └─────────────────────────────────────────────────┘
 
@@ -216,11 +265,178 @@ IMPORTANT:
 
 IMPORTANT:
 -----------
-✅ Static methods do NOT go inside objects
-✅ Instance methods also NOT copied into objects
-✅ Methods stay in METHOD AREA
-✅ Objects only store instance variable data
+✅ e1 stores object address
+✅ Actual object lives in HEAP
+✅ Actual values now created in HEAP
+✅ METHOD AREA only stores structure
 */
+
+
+        /*
+        🚀 STEP 3 : ASSIGN VALUES
+        ==========================
+
+        JVM uses e1 reference
+        to locate heap object.
+        */
+
+        e1.name = "Aman";
+        e1.age = 25;
+
+
+        /*
+        🧠 MEMORY AFTER ASSIGNING VALUES
+        =================================
+
+
+                    JVM MEMORY
+════════════════════════════════════════════════════
+
+
+
+
+┌─────────────────────────────────────────────────┐
+│                 STACK MEMORY                   │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│      e1                                         │
+│      │                                          │
+│      │                                          │
+│      ▼                                          │
+│     101                                         │
+│                                                 │
+└─────────────────────────────────────────────────┘
+
+
+
+
+┌─────────────────────────────────────────────────┐
+│                  HEAP MEMORY                   │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│   Address : 101                                │
+│   ------------------------------------          │
+│                                                 │
+│   Employee Object                              │
+│                                                 │
+│   name = "Aman"                                │
+│   age  = 25                                    │
+│                                                 │
+└─────────────────────────────────────────────────┘
+*/
+
+
+        /*
+        🚀 STEP 4 : SECOND OBJECT
+        ==========================
+
+        New object gets separate memory.
+        */
+
+        Employe e2 = new Employe();
+
+        e2.name = "Rahul";
+        e2.age = 23;
+
+
+        /*
+        🧠 FINAL MEMORY STATE
+        ======================
+
+
+                    JVM MEMORY
+════════════════════════════════════════════════════
+
+
+
+┌─────────────────────────────────────────────────┐
+│                 METHOD AREA                    │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│   Employee.class                               │
+│                                                 │
+│   Blueprint:                                   │
+│      String name                               │
+│      int age                                   │
+│                                                 │
+│   Static Variables:                            │
+│      company = "OpenAI"                        │
+│                                                 │
+│   Static Methods:                              │
+│      showCompany()                             │
+│                                                 │
+│   Instance Methods:                            │
+│      work()                                    │
+│                                                 │
+└─────────────────────────────────────────────────┘
+
+
+
+
+┌─────────────────────────────────────────────────┐
+│                 STACK MEMORY                   │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│      e1                         e2              │
+│      │                          │               │
+│      │                          │               │
+│      ▼                          ▼               │
+│     101                        202              │
+│                                                 │
+└─────────────────────────────────────────────────┘
+
+
+
+
+┌─────────────────────────────────────────────────┐
+│                  HEAP MEMORY                   │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│   Address : 101                                │
+│   ------------------------------------          │
+│                                                 │
+│   Employee Object                              │
+│                                                 │
+│   name = "Aman"                                │
+│   age  = 25                                    │
+│                                                 │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│   Address : 202                                │
+│   ------------------------------------          │
+│                                                 │
+│   Employee Object                              │
+│                                                 │
+│   name = "Rahul"                               │
+│   age  = 23                                    │
+│                                                 │
+└─────────────────────────────────────────────────┘
+
+
+
+IMPORTANT:
+-----------
+✅ Every object gets separate HEAP memory
+✅ Actual object values stored in HEAP
+✅ Methods are NOT copied into objects
+✅ Static members shared by all objects
+*/
+
+
+        /*
+        🔹 METHOD CALL
+        ----------------
+
+        Method definition already exists
+        in METHOD AREA.
+
+        Objects simply use that method.
+        */
+
+        e1.work();
+        e2.work();
+
+        Employe.showCompany();
     }
 }
 
@@ -230,39 +446,64 @@ IMPORTANT:
 💬 OUTPUT
 ===========
 
-OpenAI
 Aman is working
-
-
-
-🔥 STATIC METHOD vs INSTANCE METHOD
-====================================
-
-STATIC METHOD
----------------
-✅ Belongs to class
-✅ No object needed
-✅ Stored in METHOD AREA
-✅ Called using class name
-
-
-INSTANCE METHOD
-----------------
-✅ Belongs to object behavior
-✅ Requires object
-✅ Method definition stored in METHOD AREA
-✅ Uses object data
+Rahul is working
+OpenAI
 
 
 
 🔥 GOLDEN RULE
 ================
 
-Methods NEVER go inside objects.
+METHOD AREA
+-------------
+✅ Class blueprint/structure
+✅ Variable definitions
+✅ Static variables
+✅ Static methods
+✅ Instance method definitions
 
-Objects only contain:
-    ✅ Instance variable data
 
-Methods remain shared inside:
-    ✅ METHOD AREA
+HEAP MEMORY
+-------------
+✅ Actual objects
+✅ Instance variable values
+
+
+STACK MEMORY
+--------------
+✅ Reference variables
+✅ Local variables
+✅ Method execution
+
+
+
+🔥 MOST IMPORTANT UNDERSTANDING
+================================
+
+METHOD AREA stores:
+    "What object should contain"
+
+HEAP stores:
+    "Actual object data"
+
+
+
+🔥 EXAMPLE
+============
+
+METHOD AREA:
+--------------
+String name
+
+Means:
+    Every Employee object should contain
+    a variable called name
+
+
+HEAP OBJECT:
+--------------
+name = "Aman"
+
+This is actual runtime value.
 */
