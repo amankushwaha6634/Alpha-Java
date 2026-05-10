@@ -123,9 +123,31 @@ class Studenttt {
     */
 
     void display() {
+        // Instance method can access both Instance var and static var.
+        // cause static variables are shared globally.
+        /*
+        🔥 RULE
+        ===========
+            Access From	      Can Access Static?	Can Access Non-Static?
+            Static Method     	✅ Yes	                 ❌ No
+            Instance Method	    ✅ Yes	                 ✅ Yes
 
+        🧠 MEMORY UNDERSTANDING
+        ==========================
+        static String company = "OpenAI";
+        stored in: ✅ METHOD AREA
+
+        🚀 GOLDEN RULE
+        =================
+            Object can access class data
+            Class cannot directly access object data
+         */
         System.out.println(
                 "Name : " + name
+        );
+
+        System.out.println(
+                "Company : " + company
         );
     }
 
