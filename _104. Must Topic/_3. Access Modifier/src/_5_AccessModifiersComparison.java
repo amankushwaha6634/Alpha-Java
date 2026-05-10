@@ -375,12 +375,12 @@ PROTECTED
 🔥 COMPLETE ACCESS MODIFIER TABLE
 ==================================
 
-| Modifier  | Same Class | Same Package | Child Class | Different Package |
-|-----------|------------|---------------|--------------|-------------------|
-| public    | ✅ | ✅ | ✅ | ✅ |
-| private   | ✅ | ❌ | ❌ | ❌ |
-| default   | ✅ | ✅ | ❌ | ❌ |
-| protected | ✅ | ✅ | ✅ | ❌ |
+| Modifier  | Same Class | Same Package   | Child Class | Different Package |
+|-----------|------------|----------------|--------------|-------------------|
+| public    | ✅         |       ✅       |          ✅ |    ✅              |
+| private   | ✅         |       ❌       |          ❌ |    ❌              |
+| default   | ✅         |       ✅       |          ❌ |    ❌              |
+| protected | ✅         |       ✅       |          ✅ |    ❌              |
 
 
 
