@@ -426,3 +426,271 @@ YES
 NO
     → constructor
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+🚀 COMPLETE JVM EXECUTION FLOW
+================================
+
+
+Program Starts
+    ↓
+
+JVM Starts
+    ↓
+
+JVM Loads Class
+    ↓
+
+METHOD AREA Created
+    ↓
+
+Static Variables Created
+    ↓
+
+Default Values Assigned
+    ↓
+
+Static Block Executes
+    ↓
+
+main() Method Found
+    ↓
+
+main() Execution Starts
+    ↓
+
+STACK FRAME for main() Created
+    ↓
+
+Object Creation Happens
+    ↓
+
+HEAP MEMORY Allocated
+    ↓
+
+Instance Variables Created
+    ↓
+
+Default Values Assigned
+    ↓
+
+Constructor Executes
+    ↓
+
+Reference Stored In STACK
+    ↓
+
+Object Ready To Use
+
+
+
+🔥 REAL FLOW WITH MEMORY
+=========================
+
+
+                JVM MEMORY
+════════════════════════════════════════════════════
+
+
+
+1️⃣ CLASS LOADING
+───────────────────
+
+JVM
+    ↓
+Loads Class
+    ↓
+METHOD AREA
+
+
+┌─────────────────────────────────────┐
+│            METHOD AREA             │
+├─────────────────────────────────────┤
+│                                     │
+│   Test.class                        │
+│                                     │
+│   static int x = 10                 │
+│                                     │
+│   static { }                        │
+│                                     │
+│   static void show()                │
+│                                     │
+│   void display()                    │
+│                                     │
+└─────────────────────────────────────┘
+
+
+
+2️⃣ STATIC BLOCK EXECUTION
+───────────────────────────
+
+Class Loaded
+    ↓
+Static Variables Initialized
+    ↓
+Static Block Runs
+    ↓
+main() Starts
+
+
+
+3️⃣ main() EXECUTION
+─────────────────────
+
+main() Called
+    ↓
+STACK FRAME Created
+
+
+┌─────────────────────────────────────┐
+│            STACK MEMORY            │
+├─────────────────────────────────────┤
+│                                     │
+│   main() Frame                      │
+│                                     │
+└─────────────────────────────────────┘
+
+
+
+4️⃣ OBJECT CREATION
+────────────────────
+
+new Test()
+    ↓
+HEAP MEMORY Allocated
+    ↓
+Instance Variables Created
+    ↓
+Constructor Executes
+
+
+
+┌─────────────────────────────────────┐
+│             HEAP MEMORY            │
+├─────────────────────────────────────┤
+│                                     │
+│   Address : 101                     │
+│                                     │
+│   Test Object                       │
+│                                     │
+│   name = "Aman"                     │
+│   age  = 25                         │
+│                                     │
+└─────────────────────────────────────┘
+
+
+
+5️⃣ REFERENCE VARIABLE
+───────────────────────
+
+Object Created
+    ↓
+Reference Stored In STACK
+
+
+
+┌─────────────────────────────────────┐
+│            STACK MEMORY            │
+├─────────────────────────────────────┤
+│                                     │
+│   t1 ───────────────→ 101           │
+│                                     │
+└─────────────────────────────────────┘
+
+
+
+🔥 FINAL EXECUTION ORDER
+=========================
+
+Class Loading
+    ↓
+Static Variables
+    ↓
+Static Block
+    ↓
+main()
+    ↓
+Object Creation
+    ↓
+Instance Variables
+    ↓
+Constructor
+    ↓
+Methods Execute
+
+
+
+🔥 GOLDEN RULES
+================
+
+STATIC
+    ↓
+Created During Class Loading
+
+
+INSTANCE
+    ↓
+Created During Object Creation
+
+
+LOCAL VARIABLES
+    ↓
+Created During Method Execution
+
+
+
+🔥 MEMORY RULES
+================
+
+METHOD AREA
+-------------
+→ Class Metadata
+→ Static Variables
+→ Static Methods
+→ Instance Method Definitions
+
+
+HEAP MEMORY
+-------------
+→ Objects
+→ Instance Variables
+
+
+STACK MEMORY
+--------------
+→ Method Frames
+→ Local Variables
+→ Reference Variables
+*/
