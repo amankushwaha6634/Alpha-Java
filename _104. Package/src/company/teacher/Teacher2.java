@@ -4,7 +4,7 @@ package company.teacher;
 //import company.student.Ankit;
 //import company.student.Arpan;
   import company.student.*;
-/*   With *: import company.student.*;   all classes become available of company.student */
+/*   With *: import company.student.*;   all files (classes) become available of company.student */
 
 /*  * imports ONLY classes.
     It does NOT import: sub-packages  => so we have to import subpackage classes explicitily*/
