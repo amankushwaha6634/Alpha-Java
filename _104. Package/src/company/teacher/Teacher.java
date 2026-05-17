@@ -26,15 +26,11 @@ Suppose folder structure is:
           └── student
                 └── Student.java
 
-
 Inside Student.java we write:
-
     package company.student;
 
 NOT:
-
     package src.company.student;
-
 
 
 🔹 WHY src IS NOT INCLUDED?
