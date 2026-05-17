@@ -16,7 +16,7 @@ public class Main {
         Teacher2 t2 = new Teacher2();
 
 
-        s1.display();
+        // s1.display();
 
         t1.teach();
         t2.teach();

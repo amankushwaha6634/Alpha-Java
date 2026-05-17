@@ -10,7 +10,7 @@ public class Teacher1 {
         Aman s1= new Aman();
 
         System.out.println(
-                "Teacher 1 Teaching : " + subject + " to " + s1.name
+                "Teacher 1 Teaching only : " + subject + " to " + s1.name
         );
     }
 }
