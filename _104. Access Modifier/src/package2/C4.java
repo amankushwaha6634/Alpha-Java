@@ -40,3 +40,11 @@ child object
 
 NOT parent object 🚨
  */
+
+
+/*
+🔥 MOST IMPORTANT LEARNING
+=============================
+Access Type	Through Parent Object	Through    Child Object
+protected (different package)	      ❌        	✅
+ */
