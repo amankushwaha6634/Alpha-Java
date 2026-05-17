@@ -1,13 +1,13 @@
 package company.teacher;
 
-import company.student.Student;
+import company.student.Aman;
 
 public class Teacher {
 
     public String subject = "Java";
 
     public void teach() {
-        Student s1= new Student();
+        Aman s1= new Aman();
 
         System.out.println(
                 "Teaching : " + subject + " to " + s1.name

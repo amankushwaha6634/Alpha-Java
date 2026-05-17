@@ -1,7 +1,7 @@
 package company;
 
 
-import company.student.Student;
+import company.student.Aman;
 import company.teacher.Teacher;
 
 
@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Student s1 = new Student();
+        Aman s1 = new Aman();
 
         Teacher t1 = new Teacher();
 

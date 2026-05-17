@@ -73,7 +73,7 @@ So:
     public class Student
 */
 
-public class Student {
+public class Aman {
     /* Simple variable. */
     public String name = "Aman";
 
