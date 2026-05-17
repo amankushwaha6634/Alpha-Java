@@ -2,7 +2,7 @@ package company.teacher;
 
 import company.student.Aman;
 
-public class Teacher {
+public class Teacher1 {
 
     public String subject = "Java";
 
@@ -10,7 +10,7 @@ public class Teacher {
         Aman s1= new Aman();
 
         System.out.println(
-                "Teaching : " + subject + " to " + s1.name
+                "Teacher 1 Teaching : " + subject + " to " + s1.name
         );
     }
 }
