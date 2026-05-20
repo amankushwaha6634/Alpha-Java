@@ -5,10 +5,10 @@ import package1.ProtectedConstructor;
 
 
 
-public class TestProtected extends ProtectedConstructor {
+public class TestProtected_Inheritance extends ProtectedConstructor {
 
 
-    public TestProtected() {
+    public TestProtected_Inheritance() {
 
         /*
         ✅ VALID
@@ -154,4 +154,195 @@ NOT separate parent object.
 ----------------
 super()= parent constructor call
 new Parent() = separate parent object creation
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+super calls parent constructor only so methods are not available in parent constructor means
+so no method will be inherited ?
+
+📘 DOES super() CONTROL METHOD INHERITANCE?
+=============================================
+
+🧠 IMPORTANT QUESTION
+----------------------
+super() calls parent constructor only.
+So are methods inherited or not?
+
+
+
+🔹 VERY IMPORTANT RULE
+------------------------
+❌ Constructors are NOT inherited
+BUT
+✅ Methods ARE inherited
+
+
+
+🔹 WHAT DOES super() DO?
+--------------------------
+super() ONLY calls:
+
+    parent constructor
+
+for parent initialization.
+
+It does NOT control inheritance.
+
+
+
+🔹 WHAT CREATES INHERITANCE?
+------------------------------
+
+Inheritance happens because of:
+
+    extends
+
+NOT because of:
+
+    super()
+
+
+
+🔹 EXAMPLE
+------------
+
+class Parent {
+
+    void show() {
+
+        System.out.println(
+                "Parent Method"
+        );
+    }
+}
+
+
+class Child extends Parent {
+
+}
+
+🔹 OBJECT CREATION
+--------------------
+
+Child c = new Child();
+c.show();
+
+🔹 OUTPUT
+-----------
+Parent Method
+
+🔹 WHY METHOD AVAILABLE?
+--------------------------
+Because:
+    extends Parent
+
+inherits:
+    ✅ methods
+    ✅ variables
+
+
+
+🔹 IMPORTANT UNDERSTANDING
+----------------------------
+Even if parent constructor is empty:
+
+Parent() {
+
+}
+
+methods are STILL inherited.
+
+
+
+🔹 CONSTRUCTOR VS INHERITANCE
+--------------------------------
+
+Constructor = used for object initialization
+
+extends = creates inheritance relationship
+
+super() = calls parent constructor
+
+
+
+🔹 REAL FLOW
+---------------
+
+extends
+    ↓
+inherit methods + variables
+
+
+super()
+    ↓
+initialize parent state
+
+
+
+🔹 WHY CONSTRUCTORS ARE NOT INHERITED?
+----------------------------------------
+
+Because constructor name belongs to:
+
+    class name
+
+Parent constructor:
+
+    Parent()
+
+Child class name:
+
+    Child
+
+So constructor inheritance is impossible.
+
+
+
+🔹 BUT METHODS ARE INHERITED
+------------------------------
+
+Methods represent:
+
+    behavior
+
+So child class can reuse them.
+
+
+
+🔹 GOLDEN RULE
+----------------
+
+extends
+=
+inheritance
+
+
+super()
+=
+constructor calling
+
+
+Both are DIFFERENT concepts.
 */
