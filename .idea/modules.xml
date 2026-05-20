@@ -3,24 +3,24 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Alpha-Java.iml" filepath="$PROJECT_DIR$/.idea/Alpha-Java.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods/NonPrimitive/Array/Array.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods/NonPrimitive/Array/Array.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods/Primitive/CharacterAndBoolean/CharacterAndBoolean.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods/Primitive/CharacterAndBoolean/CharacterAndBoolean.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods/Primitive/FloatType/FloatType.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods/Primitive/FloatType/FloatType.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods/Primitive/IntegerType/IntegerType.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods/Primitive/IntegerType/IntegerType.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods/NonPrimitive/NonPrimitive.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods/NonPrimitive/NonPrimitive.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods/Primitive/Primitive.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods/Primitive/Primitive.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods/NonPrimitive/String/String.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods/NonPrimitive/String/String.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/NonPrimitive/Array/Array.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/NonPrimitive/Array/Array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/Primitive/CharacterAndBoolean/CharacterAndBoolean.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/Primitive/CharacterAndBoolean/CharacterAndBoolean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/Primitive/FloatType/FloatType.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/Primitive/FloatType/FloatType.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/Primitive/IntegerType/IntegerType.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/Primitive/IntegerType/IntegerType.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/NonPrimitive/NonPrimitive.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/NonPrimitive/NonPrimitive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/Primitive/Primitive.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/Primitive/Primitive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/NonPrimitive/String/String.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/NonPrimitive/String/String.iml" />
       <module fileurl="file://$PROJECT_DIR$/_100. Basics/_0. Java Advantages Disadvanatges/_0. Java Advantages Disadvanatges.iml" filepath="$PROJECT_DIR$/_100. Basics/_0. Java Advantages Disadvanatges/_0. Java Advantages Disadvanatges.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_103. Must Important Topic/_1. Class Parts/_1. Class Parts.iml" filepath="$PROJECT_DIR$/_103. Must Important Topic/_1. Class Parts/_1. Class Parts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_103. Class-Constructor-this + Instance var-method + Static var-method/_1. Class Parts/_1. Class Parts.iml" filepath="$PROJECT_DIR$/_103. Class-Constructor-this + Instance var-method + Static var-method/_1. Class Parts/_1. Class Parts.iml" />
       <module fileurl="file://$PROJECT_DIR$/_100. Basics/_1. Data Types/_1. Data Types.iml" filepath="$PROJECT_DIR$/_100. Basics/_1. Data Types/_1. Data Types.iml" />
       <module fileurl="file://$PROJECT_DIR$/_108. OOPS/_1. Encapsulation/_1. Encapsulation.iml" filepath="$PROJECT_DIR$/_108. OOPS/_1. Encapsulation/_1. Encapsulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/_105. Collection N Generic Basics/_1. Generic/_1. Generic.iml" filepath="$PROJECT_DIR$/_105. Collection N Generic Basics/_1. Generic/_1. Generic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_102. JDK/_1. JDK/_1. JDK.iml" filepath="$PROJECT_DIR$/_102. JDK/_1. JDK/_1. JDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_102. JDK + JVM Memory Management/_1. JDK/_1. JDK.iml" filepath="$PROJECT_DIR$/_102. JDK + JVM Memory Management/_1. JDK/_1. JDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/_100. Basics/_100. Basics.iml" filepath="$PROJECT_DIR$/_100. Basics/_100. Basics.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods/_101. DataTypesMethods.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods/_101. DataTypesMethods.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_102. JDK/_102. JDK.iml" filepath="$PROJECT_DIR$/_102. JDK/_102. JDK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_102. JDK/_103. JVM N Memory N Performance/_103. JVM N Memory N Performance.iml" filepath="$PROJECT_DIR$/_102. JDK/_103. JVM N Memory N Performance/_103. JVM N Memory N Performance.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_103. Must Important Topic/_103. Must Important Topic.iml" filepath="$PROJECT_DIR$/_103. Must Important Topic/_103. Must Important Topic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/_101. DataTypesMethods + Primitive + NonPrimitive.iml" filepath="$PROJECT_DIR$/_101. DataTypesMethods + Primitive + NonPrimitive/_101. DataTypesMethods + Primitive + NonPrimitive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_102. JDK + JVM Memory Management/_102. JDK + JVM Memory Management.iml" filepath="$PROJECT_DIR$/_102. JDK + JVM Memory Management/_102. JDK + JVM Memory Management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_103. Class-Constructor-this + Instance var-method + Static var-method/_103. Class-Constructor-this + Instance var-method + Static var-method.iml" filepath="$PROJECT_DIR$/_103. Class-Constructor-this + Instance var-method + Static var-method/_103. Class-Constructor-this + Instance var-method + Static var-method.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_102. JDK + JVM Memory Management/_103. JVM N Memory N Performance/_103. JVM N Memory N Performance.iml" filepath="$PROJECT_DIR$/_102. JDK + JVM Memory Management/_103. JVM N Memory N Performance/_103. JVM N Memory N Performance.iml" />
       <module fileurl="file://$PROJECT_DIR$/_104. Package/_104. Package.iml" filepath="$PROJECT_DIR$/_104. Package/_104. Package.iml" />
       <module fileurl="file://$PROJECT_DIR$/_104.A. Access Modifier/_104.A. Access Modifier.iml" filepath="$PROJECT_DIR$/_104.A. Access Modifier/_104.A. Access Modifier.iml" />
       <module fileurl="file://$PROJECT_DIR$/_104.B. Access Modifier On Classes/_104.B. Access Modifier On Classes.iml" filepath="$PROJECT_DIR$/_104.B. Access Modifier On Classes/_104.B. Access Modifier On Classes.iml" />
@@ -31,14 +31,13 @@
       <module fileurl="file://$PROJECT_DIR$/_107. Concurrency N Multithreading/_107. Concurrency N Multithreading.iml" filepath="$PROJECT_DIR$/_107. Concurrency N Multithreading/_107. Concurrency N Multithreading.iml" />
       <module fileurl="file://$PROJECT_DIR$/_108. OOPS/_108. OOPS.iml" filepath="$PROJECT_DIR$/_108. OOPS/_108. OOPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/_106. Collections Advanced/_1_Arraylist/_1_Arraylist.iml" filepath="$PROJECT_DIR$/_106. Collections Advanced/_1_Arraylist/_1_Arraylist.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_102. JDK/_2. JVM Memory Management/_2. JVM Memory Management.iml" filepath="$PROJECT_DIR$/_102. JDK/_2. JVM Memory Management/_2. JVM Memory Management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_102. JDK + JVM Memory Management/_2. JVM Memory Management/_2. JVM Memory Management.iml" filepath="$PROJECT_DIR$/_102. JDK + JVM Memory Management/_2. JVM Memory Management/_2. JVM Memory Management.iml" />
       <module fileurl="file://$PROJECT_DIR$/_105. Collection N Generic Basics/_2. List vs Set vs Map/_2. List vs Set vs Map.iml" filepath="$PROJECT_DIR$/_105. Collection N Generic Basics/_2. List vs Set vs Map/_2. List vs Set vs Map.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_103. Must Important Topic/_2. Static Non Static/_2. Static Non Static.iml" filepath="$PROJECT_DIR$/_103. Must Important Topic/_2. Static Non Static/_2. Static Non Static.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_103. Class-Constructor-this + Instance var-method + Static var-method/_2. Static Non Static/_2. Static Non Static.iml" filepath="$PROJECT_DIR$/_103. Class-Constructor-this + Instance var-method + Static var-method/_2. Static Non Static/_2. Static Non Static.iml" />
       <module fileurl="file://$PROJECT_DIR$/_100. Basics/_2. TypeCastingDemo/_2. TypeCastingDemo.iml" filepath="$PROJECT_DIR$/_100. Basics/_2. TypeCastingDemo/_2. TypeCastingDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/_108. OOPS/_2.A. Abstraction/_2.A. Abstraction.iml" filepath="$PROJECT_DIR$/_108. OOPS/_2.A. Abstraction/_2.A. Abstraction.iml" />
       <module fileurl="file://$PROJECT_DIR$/_108. OOPS/_2.B. Abstraction - Interfaces/_2.B. Abstraction - Interfaces.iml" filepath="$PROJECT_DIR$/_108. OOPS/_2.B. Abstraction - Interfaces/_2.B. Abstraction - Interfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/_108. OOPS/_2.C. Abstraction IO/_2.C. Abstraction IO.iml" filepath="$PROJECT_DIR$/_108. OOPS/_2.C. Abstraction IO/_2.C. Abstraction IO.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_103. Must Important Topic/_3. Access Modifier/_3. Access Modifier.iml" filepath="$PROJECT_DIR$/_103. Must Important Topic/_3. Access Modifier/_3. Access Modifier.iml" />
       <module fileurl="file://$PROJECT_DIR$/_100. Basics/_3. Control Flow/_3. Control Flow.iml" filepath="$PROJECT_DIR$/_100. Basics/_3. Control Flow/_3. Control Flow.iml" />
       <module fileurl="file://$PROJECT_DIR$/_105. Collection N Generic Basics/_3. HashSet vs LinkedHashSet vs TreeSet/_3. HashSet vs LinkedHashSet vs TreeSet.iml" filepath="$PROJECT_DIR$/_105. Collection N Generic Basics/_3. HashSet vs LinkedHashSet vs TreeSet/_3. HashSet vs LinkedHashSet vs TreeSet.iml" />
       <module fileurl="file://$PROJECT_DIR$/_108. OOPS/_3. Polymorphism/_3. Polymorphism.iml" filepath="$PROJECT_DIR$/_108. OOPS/_3. Polymorphism/_3. Polymorphism.iml" />

@@ -29,32 +29,7 @@ public class TestProtected1
 
     void test() {
 
-
-        /*
-        🔹 DIRECT INNER CLASS ACCESS
-        -----------------------------
-
-        Demo is protected inner class.
-
-        Since:
-
-            TestProtected
-                    extends
-            ProtectedInner
-
-        child class can access it.
-        */
-
         Demo d = new Demo();
-
-
-        /*
-        🔹 METHOD CALL
-        ----------------
-
-        Calling method of protected
-        inner class.
-        */
 
         d.display();
     }
